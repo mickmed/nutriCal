@@ -1,0 +1,168 @@
+/*Neutralize border and margins*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+@keyframes nav-bar{
+	5%{
+		background-color:orange;
+		width: 0px;
+	}
+	25%{
+		background-color:blue;
+		width: 25%;
+	}50%{
+		background-color:green;
+		width: 50%;
+	}
+	100%{
+		background-color: rgba(0, 128, 0, .85);
+		width:100%;
+	}
+}
+nav {
+    display: flex;
+    background-color: rgba(0, 128, 0, .85);
+    list-style-type: none;
+    /*justify-content: flex-end;*/
+    align-items: center;
+    height: 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+	animation: nav-bar .5s linear 0s 1;
+	animation-fill-mode: forwards;
+
+
+}
+
+nav .logo {
+    flex: 3;
+    text-align: center;
+}
+
+.nav-inner {
+    flex: 7;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+
+
+    text-decoration: none;
+    color: white;
+}
+main{
+	padding-top:50px;
+}
+/*-------------HOME PAGE---------------------*/
+main.home{
+    
+    width: 100vw;
+    /*height:100vh;*/
+    background: url("../img/veggies1.jpg")fixed;
+    background-position: center;
+    
+}
+
+.home section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /*background-color:green;*/
+    padding:30px 100px;
+    /*border: 2px solid;*/
+    height: 22vh;
+    letter-spacing:5px;
+}
+
+.home section div {
+    font-family: 'Chewy', cursive;font-size: 76px;
+    /*background-color:lavender;*/
+    font-style: italic;
+    color:yellow;
+    -webkit-text-stroke: 3px green; 
+	text-shadow:5px 5px 20px black;
+	/*background-color:rgba(255,255,255,.3);*/
+}
+
+.home section:nth-child(2){
+	justify-content: flex-start;
+}
+/*---------------APP PAGE*------------------*/
+
+
+main.app{
+    font-family: Arial;
+    width: 100vw;
+    /*height:100vh;*/
+    background: url("../img/veggies2.jpg")fixed;
+    background-position: cover;
+	/*opacity:.2;*/
+  
+}
+.mainapp{
+    background:rgba(255,255,255,.7);
+}
+.app section{
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding:30px 100px;
+    /*height: 22vh;*/
+    letter-spacing:5px;
+    border:2px solid black;
+
+}
+.app section div{
+    border:solid;
+}
+
+.mainapp ul{
+    list-style-type: none;
+
+}
+.flex-ul{
+    display:flex;
+    min-width:300px;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
