@@ -2,21 +2,20 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Arial;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
+
 @keyframes nav-bar{
 	5%{
-		background-color:orange;
+		background-color:rgba(0, 128, 0, .05);
 		width: 0px;
 	}
 	25%{
-		background-color:blue;
+		background-color:rgba(0, 128, 0, .25);
 		width: 25%;
 	}50%{
-		background-color:green;
+		background-color:rgba(0, 128, 0, .55);
 		width: 50%;
 	}
 	100%{
@@ -34,7 +33,7 @@ nav {
     color: white;
     position: fixed;
     width: 100%;
-	animation: nav-bar .5s linear 0s 1;
+	animation: nav-bar 1s linear 0s 1;
 	animation-fill-mode: forwards;
 
 
@@ -43,6 +42,10 @@ nav {
 nav .logo {
     flex: 3;
     text-align: center;
+    font-size: 80px;
+    margin-top:40px;
+    -webkit-text-stroke: 3px rgba(0, 128, 0, .85);
+
 }
 
 .nav-inner {
@@ -60,15 +63,21 @@ nav a {
 main{
 	padding-top:50px;
 }
+
+footer{
+
+}
 /*-------------HOME PAGE---------------------*/
 main.home{
     
     width: 100vw;
     /*height:100vh;*/
-    background: url("../img/veggies1.jpg")fixed;
-    background-position: center;
+    background: url("../img/woman_fruit.jpg")fixed;
+    /*background-position: center;*/
+    background-size: cover;
     
 }
+
 
 .home section {
     display: flex;
@@ -82,7 +91,7 @@ main.home{
 }
 
 .home section div {
-    font-family: 'Chewy', cursive;font-size: 76px;
+    font-family: 'Chewy', cursive;font-size: 38px;
     /*background-color:lavender;*/
     font-style: italic;
     color:yellow;
@@ -134,18 +143,152 @@ main.app{
 }
 
 
+/*-------------INFO PAGE-------------------*/
+
+main.info{
+    font-family: Arial;
+    width: 100vw;
+    /*height:100vh;*/
+    background: url("../img/grains.jpg")fixed;
+    background-position: cover;
+    /*opacity:.2;*/
+  
+}
+
+.main-info{
+    background:rgba(255,255,255,.3);
+}
+.info section{
+    display: flex;
+    justify-content: space-around;
+    /*align-items: center;*/
+    padding:30px 100px;
+    /*height: 22vh;*/
+    /*letter-spacing:5px;*/
+    /*border:2px solid black;*/
+
+}
+.info section div{
+    /*border:solid;*/
+}
+.label-info{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    /*height:400px;*/
+    flex:5;
+
+}
+.colored-label{
+    background-color:lightyellow;
+    flex:3;
+}
 
 
+.label-info div{
+    background:rgba(255,255,255,.6);
+    width:600px;
+    margin:0 auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(255,255,255,.6);
+}
+
+/*----------TESTIMONIALS PAGE-----------*/
 
 
+main.testimonials{
+    font-family: Arial;
+    width: 100vw;
+    
+    background: url("../img/beans.jpg")fixed;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*opacity:.2;*/
+    height:100%;
+}
+
+.main-testimonials{
+    background:rgba(255,255,255,.3);
+}
+.testimonials section{
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: flex-start;
+    padding:30px 100px;
+    /*height: 22vh;*/
+    /*letter-spacing:5px;*/
+    /*border:2px solid black;*/
+
+}
+.testimonials section div{
+    border:solid;
+}
+
+/*----------TESTIMONIALS PAGE-----------*/
 
 
+main.future{
+    font-family: Arial;
+    width: 100vw;
+    
+    background: url("../img/fruit1.jpg")fixed;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*opacity:.2;*/
+    height:100%;
+}
+
+.main-future{
+    background:rgba(255,255,255,.3);
+}
+.future section{
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: flex-start;
+    padding:30px 100px;
+    /*height: 22vh;*/
+    /*letter-spacing:5px;*/
+    /*border:2px solid black;*/
+
+}
+.future section div{
+    border:solid;
+}
 
 
+/*----------ABOUT PAGE-----------*/
 
 
+main.about{
+    font-family: Arial;
+    width: 100vw;
+    
+    background: url("../img/bread.jpg")fixed;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*opacity:.2;*/
+    height:100%;
+}
 
+.main-about{
+    background:rgba(255,255,255,.3);
+}
+.about section{
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: flex-start;
+    padding:80px 100px;
+    /*height: 22vh;*/
+    /*letter-spacing:5px;*/
+    /*border:2px solid black;*/
 
+}
+.about section div{
+    border:solid;
+}
 
 
 
