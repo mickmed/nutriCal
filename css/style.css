@@ -1,10 +1,9 @@
 /*Neutralize border and margins*/
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial;
-}
 
+@font-face {
+    font-family: Helvetica_Black;
+    src: url('../fonts/Helvetica-Black.otf');         
+}
 
 @keyframes nav-bar{
 	5%{
@@ -23,6 +22,12 @@
 		width:100%;
 	}
 }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
 nav {
     display: flex;
     background-color: rgba(0, 128, 0, .85);
@@ -35,7 +40,7 @@ nav {
     width: 100%;
 	animation: nav-bar 1s linear 0s 1;
 	animation-fill-mode: forwards;
-
+    border-bottom: 1px solid rgba(0, 30, 0, .85);
 
 }
 
@@ -65,7 +70,22 @@ main{
 }
 
 footer{
-
+    display:flex;
+    justify-content: space-around;
+    background-color: rgba(0, 120, 0, .7);
+    padding:10px;
+    border-top: 2px solid rgba(0, 30, 0, .85);
+}
+footer small{
+    flex:1;
+    padding:0px 20px;
+}
+footer .social-links a{
+    flex:1;
+    color:white;
+    font-size:30px;
+    padding:10px;
+    text-shadow:2px 2px black;
 }
 /*-------------HOME PAGE---------------------*/
 main.home{
@@ -73,8 +93,9 @@ main.home{
     width: 100vw;
     /*height:100vh;*/
     background: url("../img/woman_fruit.jpg")fixed;
-    /*background-position: center;*/
+    background-position: center;
     background-size: cover;
+    background-repeat:no-repeat;
     
 }
 
@@ -116,7 +137,7 @@ main.app{
   
 }
 .mainapp{
-    background:rgba(255,255,255,.7);
+    background:rgba(255,255,255,.1);
 }
 .app section{
 	display: flex;
@@ -124,14 +145,14 @@ main.app{
     align-items: flex-start;
     padding:30px 100px;
     /*height: 22vh;*/
-    letter-spacing:5px;
+    /*letter-spacing:5px;*/
     border:2px solid black;
 
 }
 .app section div{
-    border:solid;
+    /*border:solid;*/
 }
-
+/*-----app starts here--------------*/
 .mainapp ul{
     list-style-type: none;
 
@@ -141,6 +162,115 @@ main.app{
     min-width:300px;
     justify-content: space-between;
 }
+
+/*-----nutrition label starts here------*/
+.nutrition-facts{
+    background:rgba(255,255,255,.95);
+    width:300px;
+    height:560px;
+    border:solid;
+    padding:0px 5px;
+}
+.nutrition-facts div{
+    padding-top:5px;
+}
+.nutrition-facts .top{
+    border-bottom:8px solid black;
+}
+.nutrition-facts h1{
+    font-family: 'Helvetica_Black', arial;
+    font-size:36px;
+    /*text-align: center;*/
+    font-weight: bold;;
+}
+.nutrition-facts h3{
+    font-size:16px;
+}
+.nutrition-facts p{
+    font-size:12px;
+    font-weight:bold;
+}
+.amt-per-serv, .perc-daily-val{
+    font-family: 'Helvetica_Black', arial;
+    border-bottom:1px solid black;
+}
+.nutrition-facts h4{
+    font-family: 'Helvetica_Black', arial;
+}
+.calories-line{
+    display:flex;
+    justify-content: space-between;
+    padding-top:5px;
+    border-bottom:4px solid black;
+}
+.perc-daily-val{
+    display:flex;
+    justify-content: flex-end;
+}
+.sub-heading{
+
+    display:flex;
+    justify-content: space-between;
+    padding-top:5px;
+}
+.fat-sub-heading, .carb-sub-heading{
+    
+    padding-left:20px;
+
+}
+.fat-sub-heading h3, .carb-sub-heading h3{
+    /*border-top:1px solid black;*/
+    /*border-bottom:1px solid black;*/
+    padding-top:2px;
+}
+.sat-fat, .diet-fiber{
+    display:flex;
+    justify-content: space-between;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+.vitA, .vitC, .calcium, .iron{
+    display:flex;
+    justify-content: space-between;
+    border-bottom:1px solid black;
+}
+
+
+.chol, .sodium, .total-carb{
+    display:flex;
+    justify-content: space-between;
+    
+}
+.chol, .sodium{
+    border-bottom: 1px solid black;
+}
+.protein{
+    border-bottom:8px solid black;
+}
+/*.sub-heading.chol h3, .sodium h3{
+    font-family: 'Helvetica_Black', arial;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*-------------INFO PAGE-------------------*/
@@ -288,7 +418,9 @@ main.about{
 }
 .about section div{
     border:solid;
+    /*position: absolute;*/
 }
+
 
 
 
