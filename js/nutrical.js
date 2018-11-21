@@ -29,20 +29,92 @@ for (ing in ingredients) {
     option.value = ingredients[ing].ing_name;
     option.text = ingredients[ing].ing_name;
     // console.log(option);
-    document.getElementById("ings").appendChild(option);
+    // document.getElementById("ings").appendChild(option);
 }
 
 //JQuery USED TO ADD AND REMOVE DYNAMIC INGREDIENTS LIST
-$(document).ready(function() {
-    $("#ings").change(function() {
-    	var x = $('#ings option:selected').val();
-        $("#ings-list").append("<li>" + x + "<a href='javascript:void(0);' class='remove'>&times;</a></li>");
-    });
-    //need on() here to delete dynamically created <li>
-    $(document).on("click", "a.remove", function() {
-        $(this).parent().remove();
-    });
-});
+// $(document).ready(function() {
+//     $("#ings").change(function() {
+//      var x = $('#ings option:selected').val();
+//         $("#ings-list").append("<li>" + x + "<a href='javascript:void(0);' class='remove'>&times;</a></li>");
+//     });
+//     //need on() here to delete dynamically created <li>
+//     $(document).on("click", "a.remove", function() {
+//         $(this).parent().remove();
+//     });
+// });
+
+
+bannerTargeting();
+function bannerTargeting() {
+    var banner = document.getElementById("one");
+    // var pos = 0;
+    var targeting = setInterval(bannerChange, 5000);
+    function bannerChange() {
+        // banner.innerHTML="ha"; 
+        if (banner.innerHTML.indexOf("planning") !== -1) {
+            console.log('planning');
+            banner.innerHTML = "<h1>targeting nutrients?</h1>";
+            clearInterval(targeting);
+            bannerCounting();
+        }
+    }
+}
+// console.log('heres');
+
+function bannerCounting() {
+    console.log('here');
+    var banner = document.getElementById("one");
+    // var pos = 0;
+    var counting = setInterval(bannerChange, 5000);
+    function bannerChange() {
+        // banner.innerHTML="ha"; 
+        if (banner.innerHTML.indexOf("targeting") !== -1) {
+            console.log('targeting');
+            banner.innerHTML = "<h1>counting calories?</h1>";
+            clearInterval(counting);
+            bannerSmallBus();
+        }
+    }
+}
+
+function bannerSmallBus() {
+    var banner = document.getElementById("one");
+    // var pos = 0;
+    var smallBus = setInterval(bannerChange, 5000);
+    function bannerChange() {
+        // banner.innerHTML="ha"; 
+        if (banner.innerHTML.indexOf("counting") !== -1) {
+            console.log('targeting');
+            banner.innerHTML = "<h1>small business?</h1>";
+            clearInterval(smallBus);
+            bannerPlanning();
+        }
+    }
+}
+function bannerPlanning() {
+    var banner = document.getElementById("one");
+    // var pos = 0;
+    var  planning = setInterval(bannerChange, 5000);
+    function bannerChange() {
+        // banner.innerHTML="ha"; 
+        if (banner.innerHTML.indexOf("small") !== -1) {
+            console.log('targeting');
+            banner.innerHTML = "<h1>planning healthy meals?</h1>";
+            clearInterval(planning);
+            bannerTargeting();
+        }
+    }
+}
+
+
+// var banner = document.getElementById("one");
+// // banner.innerHTML="ha"; 
+// if (banner.innerHTML.indexOf("planning") !== -1) {
+//     console.log(banner);
+//     banner.innerHTML = "<h1>sas</h1>";
+// }
+
 
 // TRIED TO ADD INGREDIENTS TO UL WITH VANILLA JS BUT COULD NOT REMOVE DYNAMICALLY CREATED <li>'s
 
