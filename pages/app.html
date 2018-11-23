@@ -3,7 +3,7 @@
 
 <head>
     <title>NutriCal</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amaranth|Chewy|Lilita+One|Patua+One|Pridi|Roboto|Vidaloka|Viga" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -11,39 +11,63 @@
 
 <body>
     <nav>
-        <a href="../index.html" class="logo">nutriCal</a>
+        <a href="../index.html" class="logo">NutriCal</a>
         <div class="nav-inner">
             <a href="app.html">app</a>
             <a href="guide.html">guide</a>
             <a href="info.html">info</a>
-            <a href="testimonials.html">testemonials</a>
+            <a href="testimonials.html">testimonials</a>
             <a href="future.html">future</a>
             <a href="about.html">about</a>
         </div>
     </nav>
+    <!-- APP STARTS HERE -->
     <main class="app">
         <section class="mainapp">
             <div class="ing-input">
                 <select id="ings">
                 </select>
-                <button id="add-ing-btn">Add Ingredient</button>
                 <div class="flex-ul">
-                    <ul id="ings-list"></ul>
+                    <ul id="ingredients-list">
+                        <!-- <li>
+                            <select>
+                                <option = 'ad'>gfg</option>
+                                <option = 'sd'>sdf</option>
+                            </select>
+                            <select>
+                                <option = 'ad'>gfg</option>
+                                <option = 'sd'>sdf</option>
+                            </select>
+                            <span>sdfsd</span>
+                        </li> -->
+                    </ul>
                 </div>
+             <!--    <input id="topping" type="text" class="form-control" placeholder="Add a topping">
+                <button id="addTopping" class="btn btn-success" type="button">
+                    <i class="fa fa-plus"></i>
+                </button> -->
+                <ul id="pizza">
+                </ul>
+                <button id="addPizza" type="button">
+                    <i class="fa fa-plus"></i> Add Recipe to Order
+                </button>
+                <ul id="order" class="list-group">
+                </ul>
             </div>
-            <!-- <div class="nutri-label">
-                <img src="../img/nutri-label1.jpg" width=300px;>
-            </div> -->
+            <!-- //make nutrition label here -->
+            <div id="nut-facts-wrapper">
+                <h2 id="ingName"></h2>
                 <div class="nutrition-facts">
                     <h1>Nutrition Facts</h1>
                     <div class="top">
-                        <h3>Serving Size</h3>
-                        <h3>Servings Per Container</h3>
+                        <span id="serv-size-row">
+                    <h3>Serving Size</h3>&nbsp<h3 id="servSize"></h3></span>
+                        <h3>Servings Per Container</h3><h3 id="servCont"></h3>
                     </div>
                     <div>
                         <p class="amt-per-serv">Amount Per Serving</p>
                         <div class="calories-line">
-                            <h3>Calories</h3>
+                            <h3>Calories</h3><h3 id="calories"></h3>
                             <h3>Calories from Fat 66</h3>
                         </div>
                         <p class="perc-daily-val">% Daily Value*</p>
@@ -80,7 +104,6 @@
                     </div>
                     <div class="protein">
                         <h4>Protein</h4>
-                        
                     </div>
                     <div class="vitA">
                         <h3>Vitamin A</h3>
@@ -100,6 +123,7 @@
                     </div>
                     <div>
                         <h6>*Percent Daily Values are based on a 2,000 calorie diet.</h6>
+                    </div>
                 </div>
             </div>
         </section>
@@ -116,7 +140,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/nutrical.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
 </body>
 
 </html>
