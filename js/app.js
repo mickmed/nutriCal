@@ -117,40 +117,44 @@ let currentIngVals = {
 };
 // when click on amnt to change
 let chngAmnt = (amnt) => {
+    // set vars
     let objId = eval(amnt.dataset.id);
     let objKeys = Object.keys(eval(amnt.dataset.id));
     let objVals = Object.values(eval(amnt.dataset.id));
-    currentIngVals.ingName = objId.IngId;
-    currentIngVals.ingAmnt = objId.servAmnt;
-    currentMeas = currentIngVals.ingMeas;
-    console.log(currentIngVals.ingMeas);
+    
+    // set object with original obj meas if empty
+    if(currentIngVals.ingMeas === ''){
+        currentIngVals.ingMeas = objId.servMeas;//set to original object val
+    }
+    // calculate new values after input change
     for (i = 0; i < objVals.length; i++) {
         if (typeof objVals[i] === 'number') {
-            // console.log(objVals[i]);
-            var lowestCommonByTsp = (objVals[i] / currentIngVals.ingAmnt);
-            // console.log(lowestCommonByTsp);
+            //make orig obj amnts into single tsp amnts
+            var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
+            //times them by the new amnt val
             var newIngAmnt = lowestCommonByTsp * amnt.value;
-            
+            //times them by the amnt meas
             if(currentIngVals.ingMeas === 'tbs'){
                 newIngAmnt = newIngAmnt * 3;
-                
             }
             if(currentIngVals.ingMeas === 'cup'){
                 newIngAmnt = newIngAmnt * 48;
-                
             }
             newIngAmnt = parseFloat(newIngAmnt).toFixed(0);
         } else {
             var newIngAmnt = objVals[i];
         }
-       
+        // fill the label with new values
         document.getElementById(objKeys[i]).innerHTML = newIngAmnt;
         // console.log(document.getElementById('servAmnt').innerHTML = amnt.value);
         // console.log(amnt.value);
     }
+    // set object with current value
     currentIngVals.ingName = objId;
     currentIngVals.ingAmnt = amnt.value;
-    
+    recipe.addIngredient(objId, amnt.value, objId.servMeas);
+    // Object.assign(recipe.addIngredient, {ingName: 'Test', ingAmnt: 'Barbar', ingMeas: 'asd'})
+    console.log(recipe.ingredients);
 }
 
 let chngMeas = (meas) => {
@@ -158,26 +162,24 @@ let chngMeas = (meas) => {
     let objId = eval(meas.dataset.id);
     let objKeys = Object.keys(eval(meas.dataset.id));
     let objVals = Object.values(eval(meas.dataset.id));
-    currentIngVals.ingName = objId.ingID;
-    currentIngVals.ingMeas = objId.servMeas;
+    // set object with original obj vals if empty
     if(currentIngVals.ingAmnt === ''){
         currentIngVals.ingAmnt = objId.servAmnt;
     }
-    currentMeas = currentIngVals.ingAmnt;
-    console.log(currentIngVals.ingAmnt);
     
+    // calculate new values after meas change
     for (i = 0; i < objVals.length; i++) {
         if (typeof objVals[i] === 'number') {
             // console.log(objVals[i]);
             var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
             // console.log(lowestCommonByTsp);
-            var newIngAmnt = lowestCommonByTsp * amnt.value;
+            var newIngAmnt = lowestCommonByTsp * currentIngVals.ingAmnt;
             
-            if(currentIngVals.ingMeas === 'tbs'){
+            if(meas.value === 'tbs'){
                 newIngAmnt = newIngAmnt * 3;
                 
             }
-            if(currentIngVals.ingMeas === 'cup'){
+            if(meas.value === 'cup'){
                 newIngAmnt = newIngAmnt * 48;
                 
             }
@@ -196,7 +198,14 @@ let chngMeas = (meas) => {
 
 }
 
+var recipe = {
+    ingredients: [],
+    addIngredient: function(ingId, ingAmnt, ingMeas) {
 
+        var ingsObject = {ingName: ingId, ingAmnt: ingAmnt, ingMeas: ingMeas};
+        this.ingredients.push(ingsObject);
+    }
+};
 
 
 // let currentObj = (currentIng) => {
@@ -238,14 +247,7 @@ let chngMeas = (meas) => {
 
 
 // MAKE RECIPE - PUT INGREDIENTS INTO ARRAY
-var recipe = {
-    ingredients: [],
-    addIngredient: function(ing) {
 
-        var ingsObject = { name: ing };
-        this.ingredients.push(ingsObject);
-    }
-};
 
 
 //CYCLE THROUGH INGS AND ADD PROPERTIES
