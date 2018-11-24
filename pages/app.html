@@ -30,10 +30,7 @@
                 <div class="flex-ul">
                     <ul id="ingredients-list">
                         <!-- <li>
-                            <select>
-                                <option = 'ad'>gfg</option>
-                                <option = 'sd'>sdf</option>
-                            </select>
+                            <input class = "ings-list-amnt">
                             <select>
                                 <option = 'ad'>gfg</option>
                                 <option = 'sd'>sdf</option>
@@ -42,7 +39,7 @@
                         </li> -->
                     </ul>
                 </div>
-             <!--    <input id="topping" type="text" class="form-control" placeholder="Add a topping">
+                <!--    <input id="topping" type="text" class="form-control" placeholder="Add a topping">
                 <button id="addTopping" class="btn btn-success" type="button">
                     <i class="fa fa-plus"></i>
                 </button> -->
@@ -56,24 +53,34 @@
             </div>
             <!-- //make nutrition label here -->
             <div id="nut-facts-wrapper">
+                <p id="ingID"></p>
                 <h2 id="ingName"></h2>
                 <div class="nutrition-facts">
+                    <!-- TOP SECTION -->
                     <h1>Nutrition Facts</h1>
                     <div class="top">
                         <span id="serv-size-row">
-                    <h3>Serving Size</h3>&nbsp<h3 id="servSize"></h3></span>
-                        <h3>Servings Per Container</h3><h3 id="servCont"></h3>
+                        <h3>Serving Size</h3>&nbsp&nbsp<h3 id="servAmnt"></h3><h3 id="servMeas"></h3></span>
+                        <span id="serv-cont-row"
+                            <h3>Servings Per Container</h3>&nbsp&nbsp<h3 id="servCont"></h3>
+                        </span>
                     </div>
+                    <!-- TOP SUB HEADING -->
                     <div>
                         <p class="amt-per-serv">Amount Per Serving</p>
                         <div class="calories-line">
                             <h3>Calories</h3><h3 id="calories"></h3>
                             <h3>Calories from Fat 66</h3>
                         </div>
+                        <!-- MAIN SECTION -->
                         <p class="perc-daily-val">% Daily Value*</p>
                         <div class="sub-heading">
-                            <h4>Total Fat</h4>
-                            <h3>%</h3>
+                            <div id="tot-fat-inner-row">
+                                <h4>Total Fat</h4>&nbsp&nbsp<h4 id="totalFat"></h4>
+                            </div>
+                            <div>
+                                <h3>%</h3>
+                            </div>
                         </div>
                         <div class="fat-sub-heading">
                             <div class="sat-fat">
@@ -92,8 +99,12 @@
                         <h3>%</h3>
                     </div>
                     <div class="total-carb">
-                        <h4>Total Carbohydrate</h4>
-                        <h3>%</h3>
+                        <div id="tot-carb-inner-row">
+                            <h4>Total Carbohydrate</h4>&nbsp&nbsp<h4 id="totalCarb"></h4>
+                        </div>
+                        <div>
+                            <h3>%</h3>
+                        </div>
                     </div>
                     <div class="carb-sub-heading">
                         <div class="diet-fiber">
@@ -103,8 +114,9 @@
                         <h3>Sugars</h3>
                     </div>
                     <div class="protein">
-                        <h4>Protein</h4>
+                        <h4>Protein</h4>&nbsp&nbsp<h4 id="protein"></h4>
                     </div>
+                    <!-- BOTTOM SECTION -->
                     <div class="vitA">
                         <h3>Vitamin A</h3>
                         <h3>%</h3>
