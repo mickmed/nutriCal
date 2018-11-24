@@ -31,7 +31,7 @@
 * {
     margin: 0px;
     padding: 0px;
-    
+
 }
 
 nav {
@@ -47,7 +47,7 @@ nav {
     animation: nav-bar 1s linear 0s 1;
     animation-fill-mode: forwards;
     border-bottom: 1px solid rgba(0, 30, 0, .85);
-font-family: 'Amaranth', sans-serif;
+    font-family: 'Amaranth', sans-serif;
 }
 
 nav .logo {
@@ -55,9 +55,10 @@ nav .logo {
     text-align: center;
     font-size: 100px;
     margin-top: 40px;
-    text-shadow:1px 1px 40px rgba(0, 128, 0, .85);;
+    text-shadow: 1px 1px 40px rgba(0, 128, 0, .85);
+    ;
     -webkit-text-stroke: 3px rgba(0, 128, 0, .85);
-    font-style:italic;
+    font-style: italic;
 
 }
 
@@ -122,8 +123,8 @@ main.home {
     /*width:100%;*/
     /*overflow: hidden;*/
     position: relative;
-   
-   
+
+
 }
 
 /**/
@@ -209,7 +210,7 @@ main.app {
     /*height: 22vh;*/
     /*letter-spacing:5px;*/
     /*border: 2px solid black;*/
-    background-color:rgba(230,240,177,1);
+    background-color: rgba(230, 240, 177, 1);
 
 }
 
@@ -228,11 +229,12 @@ main.app {
     padding: 30px;
 }
 
-input.ings-list-amnt{
-    width:40px;
-    font-size:20px;
-    text-align:right;
+input.ings-list-amnt {
+    width: 40px;
+    font-size: 20px;
+    text-align: right;
 }
+
 .ing-input select#ings {
     width: 100%;
     font-size: 20px;
@@ -245,26 +247,29 @@ input.ings-list-amnt{
 
 .ing-input ul#ingredients-list li select {
     font-size: 20px;
-    margin:3px;
+    margin: 3px;
 }
 
-.ing-input ul#ingredients-list li span{
-    margin:20px;
+.ing-input ul#ingredients-list li span {
+    margin: 20px;
 }
+
 .remove {
     text-decoration: none;
 }
 
 /*-----nutrition label starts here------*/
 
-#ingID, #ingName{
+#ingID,
+#ingName {
     display: none;
 }
 
-#nut-facts-wrapper{
+#nut-facts-wrapper {
     flex: 2;
-    min-height:550px;
+    min-height: 550px;
 }
+
 .nutrition-facts {
     background: rgba(255, 255, 255, 1);
     width: 300px;
@@ -274,12 +279,23 @@ input.ings-list-amnt{
 
 
 
-#serv-size-row, #serv-cont-row, #tot-fat-inner-row, #tot-carb-inner-row, .protein{
-    display:flex;
-    padding:3px;
+#serv-size-row,
+#serv-cont-row,
+#tot-fat-inner-row,
+#tot-carb-inner-row,
+.protein {
+    display: flex;
+    padding: 3px;
 }
-#servAmnt, #servMeas, #servCont, #calories, #totalFat, #totalCarb, #protein{
-    color:blue;
+
+#servAmnt,
+#servMeas,
+#servCont,
+#calories,
+#totalFat,
+#totalCarb,
+#protein {
+    color: blue;
 
 }
 
@@ -300,7 +316,8 @@ input.ings-list-amnt{
     ;
 }
 
-.nutrition-facts h3, {
+.nutrition-facts h3,
+    {
     font-size: 16px;
 }
 
@@ -308,7 +325,8 @@ input.ings-list-amnt{
 .amt-per-serv,
 .perc-daily-val {
     font-family: 'Helvetica_Black', arial;
-    border-bottom: 1px solid black;font-size: 12px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -397,24 +415,27 @@ main.info {
     /*height:100vh;*/
     background: url("../img/grains2.jpg")fixed;
     background-position: center;
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     /*background-color:rgba(230,240,177,1);*/
 
 }
 
 .info section.main-info {
-    background-color:rgba(230,240,177, .45);
+    background-color: rgba(230, 240, 177, .45);
     display: flex;
     margin: 60px 60px 20px;
-    position:relative;
-    border-radius:20px;
-    border:1px solid black;
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid black;
 }
-.label-info{
-    flex: 3;margin-top:50px;
+
+.label-info {
+    flex: 3;
+    margin-top: 50px;
 }
-.banner-info{    
+
+.banner-info {
     position: absolute;
     top: 20;
     left: 60px;
@@ -445,7 +466,7 @@ main.info {
 
 .label-info div {
     /*background: rgba(255, 255, 255, .6);*/
-    
+
     margin: 0px 30px;
     border-radius: 15px;
     /*box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, .6);*/
@@ -473,21 +494,22 @@ main.info {
 .one:hover {
     animation: label-titles 5s linear forwards;
 }*/
-.label-cats{
+.label-cats {
     position: relative
-   
 }
+
 /*h4:hover+.des {
     display: block;
     animation: label titles 2s ease-in-out 0s forwards;
     position: absolute;
 }*/
-.title{
+.title {
     position: absolute;
-    
-    font-size:25px;
+
+    font-size: 25px;
 
 }
+
 /*#title-two{
     top:20px;
 }
@@ -498,143 +520,58 @@ main.info {
 
 .text {
     position: absolute;
-    top:20px;
+    top: 20px;
     display: none;
-    background-color:lightyellow;
-    font-size:20px;
+    background-color: lightyellow;
+    font-size: 20px;
     line-height: 30px;
-    margin:20px 40px;
+    margin: 20px 40px;
 }
 
 
-.colored-label-wrapper{
+.colored-label-wrapper {
     flex: 3;
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     /*background-color:rgba(255,255,224,.1);*/
 
 }
+
 .colored-label-div {
     /*background-color: lightyellow;*/
     /*box-shadow:2px 2px 20px lightyellow;*/
     /*border:1px solid;*/
-    min-width:0;
+    min-width: 0;
     /*margin:5px;*/
 }
-.colored-label-pic{
-    width:650px;
+
+.colored-label-pic {
+    width: 650px;
     max-width: 100%;
-    max-height:800px;
-    }
-
-
-
-
-/*----------TESTIMONIALS PAGE-----------*/
-
-
-main.testimonials {
-    font-family: Arial;
-    width: 100vw;
-
-    background: url("../img/beans.jpg")fixed;
-    background-size: cover;
-    /*background-position: center;*/
-    background-repeat: no-repeat;
-    /*opacity:.2;*/
-    height: 100%;
-}
-
-.main-testimonials {
-    background: rgba(255, 255, 255, .3);
-}
-
-.testimonials section {
-    /*justify-content: space-around;*/
-    padding: 60px 100px;
-    /*height: 22vh;*/
-    /*letter-spacing:5px;*/
-    /*border:2px solid black;*/
-    /*width:100%;*/
-
-}
-.testimonial{
-   
-    
+    max-height: 800px;
 }
 
 
 
-.img-wrapper{
-  min-width:0px;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.img-inner-wrapper {
-    background-color: lightyellow;
-    box-shadow:2px 2px 20px lightyellow;
-    border:1px solid;
-    min-width:0;
-    /*margin:5px;*/
-}
-.testim-pic{
-    width:100%;
-    max-width: 100%;
-    max-height:800px;
-    }
 
 
 
 
-/*----------TESTIMONIALS PAGE-----------*/
 
 
-main.future {
-    font-family: Arial;
-    width: 100vw;
-
-    background: url("../img/fruit1.jpg")fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /*opacity:.2;*/
-    height: 100%;
-}
-
-.main-future {
-    background: rgba(255, 255, 255, .3);
-}
-
-.future section {
-    display: flex;
-    /*justify-content: space-around;*/
-    align-items: flex-start;
-    padding: 30px 100px;
-    /*height: 22vh;*/
-    /*letter-spacing:5px;*/
-    /*border:2px solid black;*/
-
-}
-
-.future section div {
-    border: solid;
-}
 
 
 /*----------ABOUT PAGE-----------*/
 
 
 main.about {
-    font-family: Arial;
+    font-family: 'Amaranth';
     width: 100vw;
-
     background: url("../img/grains.jpg")fixed;
     background-size: cover;
-    /*background-position: center;*/
+    background-position: center;
     background-repeat: no-repeat;
-    /*opacity:.2;*/
     height: 100vh;
 }
 
@@ -644,46 +581,174 @@ main.about {
 
 .about section {
     display: flex;
-    /*justify-content: space-around;*/
-    align-items: flex-start;
-    padding: 40px 100px;
-    /*height: 22vh;*/
-    /*letter-spacing:5px;*/
-    /*border:2px solid black;*/
+    padding: 80px 100px 0px;
+    flex-wrap: nowrap;
+
 
 }
 
-.about section div {
-    border: solid;
+.about-blurb {
+    border-radius: 50%;
+    text-align: center;
+    height: 200px;
+    width: 600px;
+    margin: 40px 20px 40px;
+    padding: 60px 40px;
+    overflow: hidden;
+    background-color: rgba(230, 240, 177, 1);
+    border: 1px solid green;
+}
+.about-blurb h1{
+    font-size:40px;
+}
+.about-blurb p{
+    padding-top:20px;
+}
+.about-tape {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*----------TESTIMONIALS PAGE----------*/
+main.testimonials {
+    font-family: Amaranth;
+    width: 100vw;
+    background: url("../img/beans.jpg")fixed;
+    background-size: cover;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    /*height: 100vh;*/
+}
+
+.main-testimonials {
+    background: rgba(255, 255, 255, 0);
+
+}
+.testimonials div .main-testimonials{
+    padding:0px 0px;
+}
+.testimonials section {
+    display: flex;
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+    margin: 80px 100px 0px 100px;
+    /*height: 22vh;*/
+    background-color: rgba(230, 240, 177, .9);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:1px 1px black;
+    border:1px solid black;
+
+}
+.testimonials section div h1{
+    font-size:40px;
+    font-style:italic;
+
+}
+.testimonials section div p{
+
+margin-top:10px;
     /*position: absolute;*/
 }
-
-
-.about-blurb{
-    border-radius:50%;
+.testimonials-blurb{
+    flex:2; 
+    padding:10px 30px;
+    font-size: 30px;
     text-align:center;
-    height:200px;
-    width:600px;
-    margin:40px 20px 20px;
-    padding:40px 20px;
-    overflow:hidden;
-    background-color:rgba(230,240,177,1);
+    
+}
+.testimonials-img-wrapper {
+    flex:3;
+    min-width: 0px;
+    display: flex;
+    justify-content: center;
+    /*padding:10px;*/
+}
 
-
-
-
-
+.testimonials-img-inner-wrapper {
+    min-width: 0;
+    margin:0;
+    /*padding:10px;*/
 
 }
 
+.testimonials-img-inner-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow:1px 1px black;
+    border-radius:5px;
+}
 
+/*----------HORIZONS PAGE----------*/
+main.horizons {
+    font-family: Amaranth;
+    width: 100vw;
+    background: url("../img/beans.jpg")fixed;
+    background-size: cover;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    /*height: 100vh;*/
+}
 
+.main-horizons {
+    background: rgba(255, 255, 255, 0);
 
+}
+.horizons div .main-horizons{
+    padding:0px 0px;
+}
+.horizons section {
+    display: flex;
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+    margin: 80px 100px 0px 100px;
+    /*height: 22vh;*/
+    background-color: rgba(230, 240, 177, .9);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:1px 1px black;
+    border:1px solid black;
 
+}
+.horizons section div h1{
+    font-size:40px;
+    font-style:italic;
 
+}
+.horizons section div p{
 
+margin-top:10px;
+    /*position: absolute;*/
+}
+.horizons-blurb{
+    flex:2; 
+    padding:10px 30px;
+    font-size: 30px;
+    text-align:center;
+    
+}
+.horizons-img-wrapper {
+    flex:3;
+    min-width: 0px;
+    display: flex;
+    justify-content: center;
+    /*padding:10px;*/
+}
 
+.horizons-img-inner-wrapper {
+    min-width: 0;
+    margin:0;
+    /*padding:10px;*/
 
+}
 
-
+.horizons-img-inner-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow:1px 1px black;
+    border-radius:5px;
+}
 

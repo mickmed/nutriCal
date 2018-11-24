@@ -18,7 +18,7 @@ let bannerTargeting = () => {
 // console.log('heres');
 
 let bannerCounting = () => {
-    console.log('here');
+    // console.log('here');
     var banner = document.getElementById("banner-home");
     // var pos = 0;
     var counting = setInterval(bannerChange, 5000);
