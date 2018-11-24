@@ -1,5 +1,15 @@
 
+// GET PAGE URL END
+let urlSnipper = (path) => {
+    page = path.split("/").pop();
+    return page;
+}
+let pathName = window.location.pathname;
+let sitePathPageName = urlSnipper(pathName);
 
+
+if(sitePathPageName === 'index.html'){
+    console.log('here');
 let bannerTargeting = () => {
     
     var banner = document.getElementById("banner-home");
@@ -62,5 +72,5 @@ let bannerPlanning = () => {
     }
 }
 bannerTargeting();
-
+}
 

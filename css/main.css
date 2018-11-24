@@ -70,10 +70,11 @@ nav .logo {
 
 nav a {
 
-
+    /*margin-top:5px;*/
     text-decoration: none;
     color: yellow;
 }
+
 
 main {
     padding-top: 50px;
@@ -117,7 +118,7 @@ main.home {
 .home section {
     display: flex;
     justify-content: flex-end;
-    margin: 70px 100px 0px;
+    margin: 120px 100px 0px;
     /*border: 2px solid;*/
     height: 100vh;
     /*width:100%;*/
@@ -134,18 +135,15 @@ main.home {
         display: none;
         opacity: 0;
     }
-
     20% {
         top: 0px;
         display: block;
         opacity: 1;
     }
-
     80% {
         top: 0px;
         opacity: 1;
     }
-
     100% {
         top: 30px;
         opacity: 0;
@@ -428,6 +426,25 @@ main.info {
     position: relative;
     border-radius: 20px;
     border: 1px solid black;
+    
+}
+
+.info section.main-info:hover{
+    animation: blend 1s linear forwards;
+}
+@keyframes blend {
+    
+    50% {
+        background-color:rgba(230, 240, 177, .50);;
+    }
+
+    75% {
+        background-color:rgba(230, 240, 177, .75);;
+    }
+
+    100% {
+        background-color:rgba(230, 240, 177, .99);;
+    }
 }
 
 .label-info {
@@ -438,7 +455,7 @@ main.info {
 .banner-info {
     position: absolute;
     top: 20;
-    left: 60px;
+    left: 35px;
     /*width: 100%;*/
     letter-spacing: 5px;
     /*text-align: left;*/
@@ -465,58 +482,21 @@ main.info {
 }
 
 .label-info div {
-    /*background: rgba(255, 255, 255, .6);*/
-
     margin: 0px 30px;
     border-radius: 15px;
-    /*box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, .6);*/
 }
 
 
 
-/*@keyframes label-titles {
-    25% {
-        transform: translate(-50px, -50px);
-    }
-
-    50% {
-        transform: translate(-50px, -50px);
-    }
-
-    75% {
-        transform: translate(-50px, -50px);
-    }
-
-    100% {
-        transform: translate(-50px, -50px);
-    }
-}
-.one:hover {
-    animation: label-titles 5s linear forwards;
-}*/
 .label-cats {
     position: relative
 }
 
-/*h4:hover+.des {
-    display: block;
-    animation: label titles 2s ease-in-out 0s forwards;
-    position: absolute;
-}*/
+
 .title {
     position: absolute;
-
     font-size: 25px;
-
 }
-
-/*#title-two{
-    top:20px;
-}
-#title-three{
-    top:40px;
-}*/
-
 
 .text {
     position: absolute;
@@ -526,6 +506,8 @@ main.info {
     font-size: 20px;
     line-height: 30px;
     margin: 20px 40px;
+    padding:20px;
+    border-radius:5px;
 }
 
 
@@ -540,7 +522,7 @@ main.info {
 
 .colored-label-div {
     /*background-color: lightyellow;*/
-    /*box-shadow:2px 2px 20px lightyellow;*/
+   
     /*border:1px solid;*/
     min-width: 0;
     /*margin:5px;*/
@@ -554,60 +536,6 @@ main.info {
 
 
 
-
-
-
-
-
-
-
-
-/*----------ABOUT PAGE-----------*/
-
-
-main.about {
-    font-family: 'Amaranth';
-    width: 100vw;
-    background: url("../img/grains.jpg")fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.main-about {
-    background: rgba(255, 255, 255, 0);
-}
-
-.about section {
-    display: flex;
-    padding: 80px 100px 0px;
-    flex-wrap: nowrap;
-
-
-}
-
-.about-blurb {
-    border-radius: 50%;
-    text-align: center;
-    height: 200px;
-    width: 600px;
-    margin: 40px 20px 40px;
-    padding: 60px 40px;
-    overflow: hidden;
-    background-color: rgba(230, 240, 177, 1);
-    border: 1px solid green;
-}
-.about-blurb h1{
-    font-size:40px;
-}
-.about-blurb p{
-    padding-top:20px;
-}
-.about-tape {
-    display: flex;
-    justify-content: center;
-}
 
 
 /*----------TESTIMONIALS PAGE----------*/
@@ -685,7 +613,8 @@ margin-top:10px;
 main.horizons {
     font-family: Amaranth;
     width: 100vw;
-    background: url("../img/beans.jpg")fixed;
+    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
+    background: url("../img/veggies3.jpg")fixed;
     background-size: cover;
     /*background-position: center;*/
     background-repeat: no-repeat;
@@ -705,7 +634,8 @@ main.horizons {
     /*align-items: center;*/
     margin: 80px 100px 0px 100px;
     /*height: 22vh;*/
-    background-color: rgba(230, 240, 177, .9);
+    /*background-color: rgba(230, 240, 177, 1);*/
+    background-color: lightyellow;
     padding:20px;
     border-radius:10px;
     box-shadow:1px 1px black;
@@ -713,7 +643,7 @@ main.horizons {
 
 }
 .horizons section div h1{
-    font-size:40px;
+    font-size:25px;
     font-style:italic;
 
 }
@@ -725,8 +655,8 @@ margin-top:10px;
 .horizons-blurb{
     flex:2; 
     padding:10px 30px;
-    font-size: 30px;
-    text-align:center;
+    font-size: 25px;
+    /*text-align:center;*/
     
 }
 .horizons-img-wrapper {
@@ -752,3 +682,49 @@ margin-top:10px;
     border-radius:5px;
 }
 
+/*----------ABOUT PAGE-----------*/
+
+
+main.about {
+    font-family: 'Amaranth';
+    width: 100vw;
+    background: url("../img/grains.jpg")fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.main-about {
+    background: rgba(255, 255, 255, 0);
+}
+
+.about section {
+    display: flex;
+    padding: 80px 100px 0px;
+    flex-wrap: nowrap;
+
+
+}
+
+.about-blurb {
+    border-radius: 50%;
+    text-align: center;
+    height: 200px;
+    width: 600px;
+    margin: 40px 20px 40px;
+    padding: 60px 40px;
+    overflow: hidden;
+    background-color: rgba(230, 240, 177, 1);
+    border: 1px solid green;
+}
+.about-blurb h1{
+    font-size:40px;
+}
+.about-blurb p{
+    padding-top:20px;
+}
+.about-tape {
+    display: flex;
+    justify-content: center;
+}
