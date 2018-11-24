@@ -221,7 +221,7 @@ main.app {
 .ing-input {
     flex: 2;
     background-color: white;
-    height: 800px;
+    height: 550px;
     border: solid;
     margin-right: 40px;
     font-size: 20px;
@@ -229,8 +229,9 @@ main.app {
 }
 
 input.ings-list-amnt{
-    width:25px;
+    width:40px;
     font-size:20px;
+    text-align:right;
 }
 .ing-input select#ings {
     width: 100%;
@@ -256,12 +257,13 @@ input.ings-list-amnt{
 
 /*-----nutrition label starts here------*/
 
-#ingID{
-    visibility: hidden;
+#ingID, #ingName{
+    display: none;
 }
 
 #nut-facts-wrapper{
     flex: 2;
+    min-height:550px;
 }
 .nutrition-facts {
     background: rgba(255, 255, 255, 1);
@@ -274,6 +276,7 @@ input.ings-list-amnt{
 
 #serv-size-row, #serv-cont-row, #tot-fat-inner-row, #tot-carb-inner-row, .protein{
     display:flex;
+    padding:3px;
 }
 #servAmnt, #servMeas, #servCont, #calories, #totalFat, #totalCarb, #protein{
     color:blue;

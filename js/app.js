@@ -90,7 +90,7 @@ var addIngObj = document.getElementById("ings").addEventListener("change", funct
         //JQuery USED TO ADD AND REMOVE DYNAMIC INGREDIENTS LIST
         let ingSelectedText = $("#ings option:selected").text();
         $("#ingredients-list").append(
-            "<li><input type='text' class='ings-list-amnt' data-id='" + id + "' onclick='chngAmnt(this)' value =" + amnt + "></select><select class='ings-list-meas' data-id='" + id + "' onclick='chngMeas(this)'>" + meas + "</select><span class='ings-list-ing'>" + ingSelectedText + "</span><a href='javascript:void(0);' class='remove'>&nbsp&times;</a></li>");
+            "<li><input type='text' class='ings-list-amnt' data-id='" + id + "' onkeyup='chngAmnt(this)' value =" + amnt + "></select><select class='ings-list-meas' data-id='" + id + "' onchange='chngMeas(this)'>" + meas + "</select><span class='ings-list-ing'>" + ingSelectedText + "</span><a href='javascript:void(0);' class='remove'>&nbsp&times;</a></li>");
 
         //need to use on() here to delete dynamically created <li>
         $(document).on("click", "a.remove", function() {
@@ -104,34 +104,100 @@ var addIngObj = document.getElementById("ings").addEventListener("change", funct
         // console.log(objKeys[i]);
         document.getElementById(objKeys[i]).innerHTML = obj[objKeys[i]];
     }
-    // console.log(obj);
-    currentIng.ing = eval(obj.ingID);
-    // console.log(obj.ingName);
+
     recipe.addIngredient(obj);
 
 });
 
 
-let currentIng = {
-    ing: ''
+let currentIngVals = {
+    ingName: '',
+    ingAmnt: '',
+    ingMeas: ''
 };
-
+// when click on amnt to change
 let chngAmnt = (amnt) => {
+    let objId = eval(amnt.dataset.id);
     let objKeys = Object.keys(eval(amnt.dataset.id));
-    console.log(objKeys);
-    for (i = 0; i < objKeys.length; i++) {
-        document.getElementById(objKeys[i]).innerHTML = eval(amnt.dataset.id)[objKeys[i]];
+    let objVals = Object.values(eval(amnt.dataset.id));
+    currentIngVals.ingName = objId.IngId;
+    currentIngVals.ingAmnt = objId.servAmnt;
+    currentMeas = currentIngVals.ingMeas;
+    console.log(currentIngVals.ingMeas);
+    for (i = 0; i < objVals.length; i++) {
+        if (typeof objVals[i] === 'number') {
+            // console.log(objVals[i]);
+            var lowestCommonByTsp = (objVals[i] / currentIngVals.ingAmnt);
+            // console.log(lowestCommonByTsp);
+            var newIngAmnt = lowestCommonByTsp * amnt.value;
+            
+            if(currentIngVals.ingMeas === 'tbs'){
+                newIngAmnt = newIngAmnt * 3;
+                
+            }
+            if(currentIngVals.ingMeas === 'cup'){
+                newIngAmnt = newIngAmnt * 48;
+                
+            }
+            newIngAmnt = parseFloat(newIngAmnt).toFixed(0);
+        } else {
+            var newIngAmnt = objVals[i];
+        }
+       
+        document.getElementById(objKeys[i]).innerHTML = newIngAmnt;
+        // console.log(document.getElementById('servAmnt').innerHTML = amnt.value);
+        // console.log(amnt.value);
     }
-    console.log(document.getElementById('servAmnt').innerHTML = amnt.value);
-    console.log(amnt.value);
+    currentIngVals.ingName = objId;
+    currentIngVals.ingAmnt = amnt.value;
+    
 }
+
 let chngMeas = (meas) => {
-    let objKeys = Object.keys(eval(amnt.dataset.id));
-    console.log(objKeys);
-    for (i = 0; i < objKeys.length; i++) {
-        document.getElementById(objKeys[i]).innerHTML = eval(amnt.dataset.id)[objKeys[i]];
+
+    let objId = eval(meas.dataset.id);
+    let objKeys = Object.keys(eval(meas.dataset.id));
+    let objVals = Object.values(eval(meas.dataset.id));
+    currentIngVals.ingName = objId.ingID;
+    currentIngVals.ingMeas = objId.servMeas;
+    if(currentIngVals.ingAmnt === ''){
+        currentIngVals.ingAmnt = objId.servAmnt;
     }
+    currentMeas = currentIngVals.ingAmnt;
+    console.log(currentIngVals.ingAmnt);
+    
+    for (i = 0; i < objVals.length; i++) {
+        if (typeof objVals[i] === 'number') {
+            // console.log(objVals[i]);
+            var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
+            // console.log(lowestCommonByTsp);
+            var newIngAmnt = lowestCommonByTsp * amnt.value;
+            
+            if(currentIngVals.ingMeas === 'tbs'){
+                newIngAmnt = newIngAmnt * 3;
+                
+            }
+            if(currentIngVals.ingMeas === 'cup'){
+                newIngAmnt = newIngAmnt * 48;
+                
+            }
+            newIngAmnt = parseFloat(newIngAmnt).toFixed(0);
+        } else {
+            var newIngAmnt = objVals[i];
+        }
+       
+        document.getElementById(objKeys[i]).innerHTML = newIngAmnt;
+        // console.log(document.getElementById('servAmnt').innerHTML = amnt.value);
+        // console.log(amnt.value);
+    }
+    currentIngVals.ingName = objId;
+    currentIngVals.ingMeas = meas.value;
+    console.log(currentIngVals.ingMeas);
+
 }
+
+
+
 
 // let currentObj = (currentIng) => {
 //     let obj = eval(currentIng);
