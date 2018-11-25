@@ -135,15 +135,18 @@ main.home {
         display: none;
         opacity: 0;
     }
+
     20% {
         top: 0px;
         display: block;
         opacity: 1;
     }
+
     80% {
         top: 0px;
         opacity: 1;
     }
+
     100% {
         top: 30px;
         opacity: 0;
@@ -426,24 +429,28 @@ main.info {
     position: relative;
     border-radius: 20px;
     border: 1px solid black;
-    
+
 }
 
-.info section.main-info:hover{
+.info section.main-info:hover {
     animation: blend 1s linear forwards;
 }
+
 @keyframes blend {
-    
+
     50% {
-        background-color:rgba(230, 240, 177, .50);;
+        background-color: rgba(230, 240, 177, .50);
+        ;
     }
 
     75% {
-        background-color:rgba(230, 240, 177, .75);;
+        background-color: rgba(230, 240, 177, .75);
+        ;
     }
 
     100% {
-        background-color:rgba(230, 240, 177, .99);;
+        background-color: rgba(230, 240, 177, .96);
+        ;
     }
 }
 
@@ -499,6 +506,7 @@ main.info {
 }
 
 .text {
+    font-family: Amaranth;
     position: absolute;
     top: 20px;
     display: none;
@@ -506,8 +514,8 @@ main.info {
     font-size: 20px;
     line-height: 30px;
     margin: 20px 40px;
-    padding:20px;
-    border-radius:5px;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 
@@ -522,7 +530,7 @@ main.info {
 
 .colored-label-div {
     /*background-color: lightyellow;*/
-   
+
     /*border:1px solid;*/
     min-width: 0;
     /*margin:5px;*/
@@ -535,6 +543,90 @@ main.info {
 }
 
 
+/*----------GUIDE PAGE----------*/
+main.guide {
+    font-family: Amaranth;
+    width: 100vw;
+    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
+    background: url("../img/veggies3.jpg")fixed;
+    background-size: cover;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    /*height: 100vh;*/
+}
+
+.main-guide {
+    background: rgba(255, 255, 255, 0);
+
+}
+
+.guide div .main-guide {
+    padding: 0px 0px;
+}
+
+.guide-wrapper {
+    padding-bottom: 20px;
+}
+
+.guide section {
+    display: flex;
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+    margin: 80px 100px 0px 100px;
+    /*height: 22vh;*/
+    /*background-color: rgba(230, 240, 177, 1);*/
+    background-color: lightyellow;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    border: 1px solid black;
+
+}
+
+.guide section div h1 {
+    font-size: 25px;
+    font-style: italic;
+    color: green;
+
+}
+
+.guide section div p {
+
+    margin-top: 10px;
+    /*position: absolute;*/
+}
+
+.guide-blurb {
+    flex: 2;
+    padding: 10px 30px;
+    font-size: 25px;
+    line-height: 37px;
+    /*text-align:center;*/
+
+}
+
+.guide-img-wrapper {
+    flex: 3;
+    min-width: 0px;
+    display: flex;
+    justify-content: center;
+    /*padding:10px;*/
+}
+
+.guide-img-inner-wrapper {
+    min-width: 0;
+    margin: 0;
+    /*padding:10px;*/
+
+}
+
+.guide-img-inner-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 1px 1px black;
+    border-radius: 5px;
+}
 
 
 
@@ -553,9 +645,15 @@ main.testimonials {
     background: rgba(255, 255, 255, 0);
 
 }
-.testimonials div .main-testimonials{
-    padding:0px 0px;
+
+.testimonials-wrapper {
+    padding-bottom: 20px;
 }
+
+.testimonials div .main-testimonials {
+    padding: 0px 0px;
+}
+
 .testimonials section {
     display: flex;
     /*justify-content: space-around;*/
@@ -563,31 +661,34 @@ main.testimonials {
     margin: 80px 100px 0px 100px;
     /*height: 22vh;*/
     background-color: rgba(230, 240, 177, .9);
-    padding:20px;
-    border-radius:10px;
-    box-shadow:1px 1px black;
-    border:1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    border: 1px solid black;
 
 }
-.testimonials section div h1{
-    font-size:40px;
-    font-style:italic;
+
+.testimonials section div h1 {
+    font-size: 25px;
+    font-style: italic;
 
 }
-.testimonials section div p{
 
-margin-top:10px;
-    /*position: absolute;*/
+.testimonials section div p {
+    margin-top: 10px;
 }
-.testimonials-blurb{
-    flex:2; 
-    padding:10px 30px;
-    font-size: 30px;
-    text-align:center;
-    
+
+.testimonials-blurb {
+    flex: 2;
+    padding: 10px 30px;
+    font-size: 25px;
+    line-height: 37px;
+    /*text-align:center;*/
+
 }
+
 .testimonials-img-wrapper {
-    flex:3;
+    flex: 3;
     min-width: 0px;
     display: flex;
     justify-content: center;
@@ -596,7 +697,7 @@ margin-top:10px;
 
 .testimonials-img-inner-wrapper {
     min-width: 0;
-    margin:0;
+    margin: 0;
     /*padding:10px;*/
 
 }
@@ -605,8 +706,8 @@ margin-top:10px;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
-    box-shadow:1px 1px black;
-    border-radius:5px;
+    box-shadow: 1px 1px black;
+    border-radius: 5px;
 }
 
 /*----------HORIZONS PAGE----------*/
@@ -625,9 +726,15 @@ main.horizons {
     background: rgba(255, 255, 255, 0);
 
 }
-.horizons div .main-horizons{
-    padding:0px 0px;
+
+.horizons div .main-horizons {
+    padding: 0px 0px;
 }
+
+.horizons-wrapper {
+    padding-bottom: 20px;
+}
+
 .horizons section {
     display: flex;
     /*justify-content: space-around;*/
@@ -636,31 +743,37 @@ main.horizons {
     /*height: 22vh;*/
     /*background-color: rgba(230, 240, 177, 1);*/
     background-color: lightyellow;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:1px 1px black;
-    border:1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    border: 1px solid black;
 
 }
-.horizons section div h1{
-    font-size:25px;
-    font-style:italic;
+
+.horizons section div h1 {
+    font-size: 25px;
+    font-style: italic;
+    color: green;
 
 }
-.horizons section div p{
 
-margin-top:10px;
+.horizons section div p {
+
+    margin-top: 10px;
     /*position: absolute;*/
 }
-.horizons-blurb{
-    flex:2; 
-    padding:10px 30px;
+
+.horizons-blurb {
+    flex: 2;
+    padding: 10px 30px;
     font-size: 25px;
+    line-height: 37px;
     /*text-align:center;*/
-    
+
 }
+
 .horizons-img-wrapper {
-    flex:3;
+    flex: 3;
     min-width: 0px;
     display: flex;
     justify-content: center;
@@ -669,7 +782,7 @@ margin-top:10px;
 
 .horizons-img-inner-wrapper {
     min-width: 0;
-    margin:0;
+    margin: 0;
     /*padding:10px;*/
 
 }
@@ -678,53 +791,206 @@ margin-top:10px;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
-    box-shadow:1px 1px black;
-    border-radius:5px;
+    box-shadow: 1px 1px black;
+    border-radius: 5px;
 }
 
 /*----------ABOUT PAGE-----------*/
 
-
 main.about {
-    font-family: 'Amaranth';
+    font-family: Amaranth;
     width: 100vw;
+    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
     background: url("../img/grains.jpg")fixed;
     background-size: cover;
-    background-position: center;
+    /*background-position: center;*/
     background-repeat: no-repeat;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 .main-about {
     background: rgba(255, 255, 255, 0);
+
+}
+
+
+.about-wrapper {
+    padding-bottom: 20px;
+
 }
 
 .about section {
     display: flex;
-    padding: 80px 100px 0px;
-    flex-wrap: nowrap;
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+    margin: 80px 100px 0px 100px;
+    /*height: 22vh;*/
+    /*background-color: rgba(230, 240, 177, 1);*/
+    background-color: lightyellow;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    border: 1px solid black;
 
+}
 
+.about section div h1 {
+    font-size: 25px;
+    font-style: italic;
+    color: green;
+
+}
+
+.about section div p {
+
+    margin-top: 10px;
+    /*position: absolute;*/
 }
 
 .about-blurb {
-    border-radius: 50%;
-    text-align: center;
-    height: 200px;
-    width: 600px;
-    margin: 40px 20px 40px;
+    flex: 2;
+    padding: 10px 30px;
+    font-size: 25px;
+    line-height: 37px;
+    
     padding: 60px 40px;
     overflow: hidden;
-    background-color: rgba(230, 240, 177, 1);
-    border: 1px solid green;
+    /*background-color: rgba(230, 240, 177, 1);*/
+    /*border: 1px solid green;*/
+
 }
-.about-blurb h1{
-    font-size:40px;
+
+.about-blurb h1 {
+    font-size: 40px;
 }
-.about-blurb p{
-    padding-top:20px;
+
+.about-blurb p {
+    padding-top: 20px;
 }
+
 .about-tape {
     display: flex;
     justify-content: center;
 }
+.about-img-wrapper {
+    flex: 3;
+    min-width: 0px;
+    display: flex;
+    justify-content: center;
+    /*padding:10px;*/
+}
+
+.about-img-inner-wrapper {
+    min-width: 0;
+    margin: 0;
+    /*padding:10px;*/
+
+}
+
+.about-img-inner-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 1px 1px black;
+    border-radius: 5px;
+}
+
+
+span#terms{
+    color:blue;
+}
+
+
+
+
+
+
+/*---------LEGAL MODAL-----*/
+
+#legal-modal {
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top:100px;
+    border: 3px black;
+    height:100%;
+
+    /*background-color:lightyellow;*/
+    width:89%;
+    display:none;
+}
+
+#legal-template {
+   /* position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top:0;*/
+    background-color: lightyellow;
+    width:100%;
+    height:900px%;
+    /*position:absolute;*/
+    border: 1px solid black;
+    position:relative;
+    
+}
+
+.modal-content {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top:80px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+      
+    width:80%;
+ 
+}
+
+.modal-content h1{
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-content h2{
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 30px;
+    font-weight:bold;
+
+}
+
+span#close-modal{
+    display:flex;
+    justify-content: flex-end;
+    font-size: 50px;
+    /*margin-top:50px;*/
+}
+
+.legal-modal{
+    margin-top:60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
