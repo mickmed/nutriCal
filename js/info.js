@@ -24,7 +24,7 @@ if (sitePathPageName === 'info.html') {
     function moveTitle (elem) {
         var pos = 0;
         // var ypos = 0;
-        var moveInt = setInterval(move, 40);
+        var moveInt = setInterval(move, 20);
 
         function move() {
             if (pos == 40) {

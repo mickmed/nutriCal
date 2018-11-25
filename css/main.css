@@ -669,9 +669,10 @@ main.testimonials {
 }
 
 .testimonials section div h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-style: italic;
-
+    color:darkgreen;
+    text-shadow: 1px 1px white;
 }
 
 .testimonials section div p {
@@ -754,6 +755,7 @@ main.horizons {
     font-size: 25px;
     font-style: italic;
     color: green;
+    text-shadow: 1px 1px white;
 
 }
 

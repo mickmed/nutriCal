@@ -1,3 +1,31 @@
+
+// GET PAGE URL END
+let urlSnipper = (path) => {
+    page = path.split("/").pop();
+    return page;
+}
+let pathName = window.location.pathname;
+let sitePathPageName = urlSnipper(pathName);
+
+console.log(sitePathPageName);
+
+// STYLE SELECTED NAV ITEM
+  let navItems = document.getElementsByClassName('navlink');
+    // console.log(navItems[0].getAttribute("href"));
+    for (i = 0; i < navItems.length; i++) {
+        console.log(i);
+        let pageName = urlSnipper(navItems[i].getAttribute("href"));
+        console.log(sitePathPageName, pageName);
+        if (pageName === sitePathPageName) {
+            console.log(navItems[i]);
+            navItems[i].style.fontSize = "24px";
+        }
+    }
+
+
+////////////////APP STARTS HERE//////////////////
+
+//MAKE CLASS FOR RECIPE INGRIEDIENTS///////
 class Ingredient {
     constructor(ingID, ingName, servAmnt, servMeas, servCont, calories, totalFat, totalCarb, protein) {
         this.ingID = ingID;
@@ -23,7 +51,7 @@ let pastaSauce = new Ingredient('pastaSauce', 'pasta sauce', .5, 'cup', 6, 60, 2
 let hummus = new Ingredient('hummus', 'hummus', 2, 'tbsp', 8, 70, 5, 4, 2);
 let wholeWheatWraps = new Ingredient('wholeWheatWraps', 'wraps - whole wheat', 50, 'grms', 6, 130, 3, 21, 6);
 
-
+/////MAKE ARRAY OF INGREDIENTS FOR DROPDOWN
 var ingredients = [];
 ingredients.push(cheese, cashews, wholeWheatPasta, milkHalfHalf, tempeh, pastaSauce, hummus, wholeWheatWraps);
 
@@ -68,7 +96,7 @@ let makeMeas = () => {
 }
 
 
-
+/////GET CHOSEN INGREDIENT ADD TO LIST IN APP 
 var addIngObj = document.getElementById("ings").addEventListener("change", function() {
     let ingSelectedVal = $('#ings option:selected').val();
     // console.log(typeof ingSelectedVal);
