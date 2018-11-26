@@ -51,7 +51,7 @@ let hummus = new Ingredient('hummus', 'hummus', 2, 'tbsp', 8, 70, 5, 4, 2);
 let wholeWheatWraps = new Ingredient('wholeWheatWraps', 'wraps - whole wheat', 50, 'grms', 6, 130, 3, 21, 6);
 
 /////MAKE ARRAY OF INGREDIENTS FOR DROPDOWN
-var ingredients = [];
+let ingredients = [];
 ingredients.push(cheese, cashews, wholeWheatPasta, milkHalfHalf, tempeh, pastaSauce, hummus, wholeWheatWraps);
 
 //MAKE DROPDOWN OF 
@@ -59,7 +59,7 @@ ingredients.push(cheese, cashews, wholeWheatPasta, milkHalfHalf, tempeh, pastaSa
 
 for (ing in ingredients) {
     // console.log(ingredients[ing].ing_name);
-    var option = document.createElement("option");
+    let option = document.createElement("option");
 
     option.value = ingredients[ing].ingID;
     option.text = ingredients[ing].ingName;
@@ -71,7 +71,7 @@ for (ing in ingredients) {
 function makeAmnt() {
     let amntReturn = [];
     for (i = 1; i <= 10; i++) {
-        var option = document.createElement("option");
+        let option = document.createElement("option");
         option.value = i;
         option.text = i;
         // $(".ings-list-amnt").append(option);
@@ -86,7 +86,7 @@ let makeMeas = () => {
     let measurements = ['tsp', 'tbs', 'cup'];
     let measReturn = [];
     for (meas in measurements) {
-        var option = document.createElement("option");
+        let option = document.createElement("option");
         option.value = measurements[meas];
         option.text = measurements[meas];
         // $(".ings-list-meas").append(option);
@@ -98,7 +98,7 @@ let makeMeas = () => {
 
 
 /////GET CHOSEN INGREDIENT ADD TO LIST IN APP 
-var addIngObj = document.getElementById("ings").addEventListener("change", function() {
+let addIngObj = document.getElementById("ings").addEventListener("change", function() {
     let ingSelectedVal = $('#ings option:selected').val();
     // console.log(typeof ingSelectedVal);
     let obj = eval(ingSelectedVal);
@@ -182,10 +182,9 @@ let currentIngVals = {
         //store object values for later
         // console.log(currentIngAmntsStored.ingIds);
         this.storedObjs.push(this.ingId, this.ingAmnt, this.ingMeas);
-        const checkObjId = (obj) => {
-            obj.ingId === this.ingId
-            console.log(obj.ingId, this.ingId)
-        };
+
+
+        
 
         // function userExists(username) {
         //     return this.storedObjs.some(function(el) {
@@ -228,7 +227,7 @@ let getFocus = (elem) => {
 }
 // when click on amnt to change
 let chngAmnt = (amnt) => {
-    // set vars
+    
     let objId = eval(amnt.dataset.id);
     let objKeys = Object.keys(eval(amnt.dataset.id));
     let objVals = Object.values(eval(amnt.dataset.id));
@@ -241,7 +240,7 @@ let chngAmnt = (amnt) => {
     for (i = 0; i < objVals.length; i++) {
         if (typeof objVals[i] === 'number') {
             //make orig obj amnts into single tsp amnts
-            var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
+            let lowestCommonByTsp = (objVals[i] / objId.servAmnt);
             //times them by the new amnt val
             var newIngAmnt = lowestCommonByTsp * amnt.value;
             //times them by the amnt meas
@@ -282,7 +281,7 @@ let chngMeas = (meas) => {
     for (i = 0; i < objVals.length; i++) {
         if (typeof objVals[i] === 'number') {
             // console.log(objVals[i]);
-            var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
+            let lowestCommonByTsp = (objVals[i] / objId.servAmnt);
             // console.log(lowestCommonByTsp);
             var newIngAmnt = lowestCommonByTsp * currentIngVals.ingAmnt;
 
@@ -306,6 +305,8 @@ let chngMeas = (meas) => {
     currentIngVals.ingName = objId;
     currentIngVals.ingMeas = meas.value;
     console.log(currentIngVals.ingMeas);
+
+    console.log()
 
 }
 
@@ -363,7 +364,7 @@ let recipeTotals = {
                 console.log
             }
         }
-        var amntsObj = { dataID: amnt.dataset.id, allAmnts: amnt.value, allMeas: meas.value };
+        let amntsObj = { dataID: amnt.dataset.id, allAmnts: amnt.value, allMeas: meas.value };
         this.totals.push(amntsObj);
     },
     getMeasFromSibling: function() {
@@ -373,11 +374,11 @@ let recipeTotals = {
 
 
 
-var recipe = {
+let recipe = {
     ingredients: [],
     addIngredient: function(ingId) {
 
-        var ingsIdObj = ingId;
+        let ingsIdObj = ingId;
         this.ingredients.push(ingsIdObj);
     }
 };

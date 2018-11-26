@@ -28,9 +28,8 @@ if (sitePathPageName === 'index.html') {
     console.log('here');
     let bannerTargeting = () => {
 
-        var banner = document.getElementById("banner-home");
-        // var pos = 0;
-        var targeting = setInterval(bannerChange, 5000);
+        let banner = document.getElementById("banner-home");
+        let targeting = setInterval(bannerChange, 5000);
 
         function bannerChange() {
 
@@ -46,9 +45,8 @@ if (sitePathPageName === 'index.html') {
 
     let bannerCounting = () => {
         // console.log('here');
-        var banner = document.getElementById("banner-home");
-        // var pos = 0;
-        var counting = setInterval(bannerChange, 5000);
+        let banner = document.getElementById("banner-home");
+        let counting = setInterval(bannerChange, 5000);
 
         function bannerChange() {
             // banner.innerHTML="ha"; 
@@ -62,9 +60,8 @@ if (sitePathPageName === 'index.html') {
     }
 
     let bannerSmallBus = () => {
-        var banner = document.getElementById("banner-home");
-        // var pos = 0;
-        var smallBus = setInterval(bannerChange, 5000);
+        let banner = document.getElementById("banner-home");
+        let smallBus = setInterval(bannerChange, 5000);
 
         function bannerChange() {
             // banner.innerHTML="ha"; 
@@ -77,9 +74,8 @@ if (sitePathPageName === 'index.html') {
         }
     }
     let bannerPlanning = () => {
-        var banner = document.getElementById("banner-home");
-        // var pos = 0;
-        var planning = setInterval(bannerChange, 5000);
+        let banner = document.getElementById("banner-home");
+        let planning = setInterval(bannerChange, 5000);
 
         function bannerChange() {
             // banner.innerHTML="ha"; 
@@ -112,9 +108,8 @@ if (sitePathPageName === 'info.html') {
 
     // ANIMATE LIST ITEMS, POP UP INFO
     function moveTitle (elem) {
-        var pos = 0;
-        // var ypos = 0;
-        var moveInt = setInterval(move, 20);
+        let pos = 0;
+        let moveInt = setInterval(move, 10);
 
         function move() {
             if (pos == 40) {
@@ -145,15 +140,15 @@ if (sitePathPageName === 'info.html') {
 
     function moveBack(elem) {
         console.log('here');
-        var pos = 0;
+        let pos = 0;
 
-        var texts = document.getElementsByClassName('text');
+        let texts = document.getElementsByClassName('text');
         for (i = 0; i < texts.length; i++) {
             texts[i].style.display = "none";
         }
-        var titles = document.getElementsByClassName('title');
+        let titles = document.getElementsByClassName('title');
         for (i = 0; i < titles.length; i++) {
-            var toppos = (i * 40) + 100;
+            let toppos = (i * 40) + 100;
             // console.log(toppos);
             titles[i].style.top = toppos + 'px';
             titles[i].style.display = "block";
@@ -163,10 +158,10 @@ if (sitePathPageName === 'info.html') {
     }
 
     // SET POSITION ABS TITLES EQUEALLY SPACED
-    var titles = document.getElementsByClassName('title');
+    let titles = document.getElementsByClassName('title');
 
     for (i = 0; i < titles.length; i++) {
-        var toppos = (i * 40) + 100;
+        let toppos = (i * 40) + 100;
         // console.log(toppos);
         titles[i].style.top = toppos + 'px';
         titles[i].style.left = "80px";
@@ -186,13 +181,13 @@ if (sitePathPageName === 'info.html') {
 /////////ABOUT PAGE////////////////////////////////
 //modal for legal terms
 if (sitePathPageName === 'about.html') {
-    var modal = document.getElementById('legal-modal');
-    var modalBtn = document.getElementsByClassName("terms")[0];
+    let modal = document.getElementById('legal-modal');
+    let modalBtn = document.getElementsByClassName("terms")[0];
 console.log(modalBtn);
-    var close = document.getElementById("close-modal");
+    let close = document.getElementById("close-modal");
     modalBtn.onclick = () => {
         modal.style.display = "block";
-        var wrapper = document.getElementsByClassName('main-about');
+        let wrapper = document.getElementsByClassName('main-about');
         console.log(wrapper);
         wrapper[0].style.display.backgroundColor = "rgba(255,255,255,.5)";
 
