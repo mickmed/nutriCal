@@ -210,14 +210,15 @@ main.app {
 
 }
 
+
 .mainapp {
     background: rgba(255, 255, 255, .1);
 }
 
 .app section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    
     padding: 70px 80px;
     /*height: 22vh;*/
     /*letter-spacing:5px;*/
@@ -299,6 +300,14 @@ input.ings-list-amnt {
     text-decoration: none;
 }
 
+#add-recipe-btn{
+    height:40px;
+    background-color:green;
+    color:white;
+    border-radius:3px;
+    padding:10px;
+    margin-top:30px;
+}
 
 /*-----nutrition label starts here------*/
 
@@ -1002,6 +1011,7 @@ span.terms{
 
     width:89%;
     display:none;
+    border-radius:40px;
 }
 
 #legal-template {
@@ -1017,7 +1027,7 @@ span.terms{
     /*position:absolute;*/
     border: 1px solid black;
     position:relative;
-    
+    border-radius:40px;
 }
 
 .modal-content {
@@ -1033,6 +1043,7 @@ span.terms{
     right: 0;
       
     width:80%;
+    border-radius:40px;
  
 }
 
@@ -1062,8 +1073,12 @@ span.terms{
     display:flex;
     justify-content: center;
     font-size: 50px;
-    color:black;
+    color:lightgrey;
+    top:50px;
+    
+    text-align:right;
 }
+
 
 .legal-modal{
     margin-top:60px;
