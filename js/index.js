@@ -187,14 +187,15 @@ if (sitePathPageName === 'info.html') {
 //modal for legal terms
 if (sitePathPageName === 'about.html') {
     var modal = document.getElementById('legal-modal');
-    var modalBtn = document.getElementById("terms");
+    var modalBtn = document.getElementsByClassName("terms")[0];
 console.log(modalBtn);
     var close = document.getElementById("close-modal");
     modalBtn.onclick = () => {
         modal.style.display = "block";
         var wrapper = document.getElementsByClassName('main-about');
         console.log(wrapper);
-        wrapper[0].style.display.backgroundColor = "red";
+        wrapper[0].style.display.backgroundColor = "rgba(255,255,255,.5)";
+
     }
     close.onclick = () => {
         modal.style.display = "none";

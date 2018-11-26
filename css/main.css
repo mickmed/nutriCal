@@ -61,6 +61,13 @@ nav .logo {
     font-style: italic;
 
 }
+/*copyright in nav*/
+#copy{
+    position:absolute;
+    top:20px;
+    left:390px;
+    color:yellow;
+}
 
 .nav-inner {
     flex: 7;
@@ -106,6 +113,7 @@ main.home {
 
     width: 100vw;
     /*height:100vh;*/
+    /*image source https://wall.alphacoders.com/by_sub_category.php?id=159964&name=Vegetables+Wallpapers*/
     background: url("../img/veggies1.jpg")fixed;
     background-position: center;
     background-size: cover;
@@ -193,7 +201,8 @@ main.app {
     font-family: Arial;
     width: 100vw;
     /*height:100vh;*/
-    /*background: url("../img/veggies2.jpg")fixed;*/
+    /*image source = http://4-designer.com/2013/07/Vegetables-HD-Images/#.W_sw9ZNKjdc*/
+    background: url("../img/veggies2.jpg")fixed;
     background-position: cover;
     /*opacity:.2;*/
 
@@ -211,7 +220,7 @@ main.app {
     /*height: 22vh;*/
     /*letter-spacing:5px;*/
     /*border: 2px solid black;*/
-    background-color: rgba(230, 240, 177, 1);
+    /*background-color: rgba(230, 240, 177, 1);*/
 
 }
 
@@ -414,6 +423,7 @@ main.info {
     font-family: Arial;
     width: 100vw;
     /*height:100vh;*/
+    /*image source = https://all-free-download.com/free-photos/food-grains-pictures.html*/
     background: url("../img/grains2.jpg")fixed;
     background-position: center;
     background-size: cover;
@@ -501,6 +511,7 @@ main.info {
 
 
 .title {
+    font-family:Amaranth, cursive;
     position: absolute;
     font-size: 25px;
 }
@@ -547,8 +558,8 @@ main.info {
 main.guide {
     font-family: Amaranth;
     width: 100vw;
-    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
-    background: url("../img/veggies3.jpg")fixed;
+    /*image source = https://www.pinterest.com/pin/766597167791327018/?lp=true*/
+    background: url("../img/veggies4.jpg")fixed;
     background-size: cover;
     /*background-position: center;*/
     background-repeat: no-repeat;
@@ -634,6 +645,7 @@ main.guide {
 main.testimonials {
     font-family: Amaranth;
     width: 100vw;
+    /*image source = http://feelgrafix.com/925544-beans.html*/
     background: url("../img/beans.jpg")fixed;
     background-size: cover;
     /*background-position: center;*/
@@ -660,7 +672,7 @@ main.testimonials {
     /*align-items: center;*/
     margin: 80px 100px 0px 100px;
     /*height: 22vh;*/
-    background-color: rgba(230, 240, 177, .9);
+    background-color: rgba(230, 240, 177, .95);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px black;
@@ -713,9 +725,9 @@ main.testimonials {
 
 /*----------HORIZONS PAGE----------*/
 main.horizons {
-    font-family: Amaranth;
+    font-family: Amaranth, cursive;
     width: 100vw;
-    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
+    /*image source = https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
     background: url("../img/veggies3.jpg")fixed;
     background-size: cover;
     /*background-position: center;*/
@@ -742,8 +754,8 @@ main.horizons {
     /*align-items: center;*/
     margin: 80px 100px 0px 100px;
     /*height: 22vh;*/
-    /*background-color: rgba(230, 240, 177, 1);*/
-    background-color: lightyellow;
+    background-color: rgba(255, 255, 224, .95);
+    /*background-color: lightyellow;*/
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px black;
@@ -752,7 +764,7 @@ main.horizons {
 }
 
 .horizons section div h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-style: italic;
     color: green;
     text-shadow: 1px 1px white;
@@ -802,7 +814,7 @@ main.horizons {
 main.about {
     font-family: Amaranth;
     width: 100vw;
-    /*https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
+    /* image source = https://wallpaperscraft.com/download/vegetables_sauce_oil_vegetarian_70648/1920x1080*/
     background: url("../img/grains.jpg")fixed;
     background-size: cover;
     /*background-position: center;*/
@@ -836,10 +848,12 @@ main.about {
 
 }
 
+
 .about section div h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-style: italic;
-    color: green;
+    color:darkgreen;
+    text-shadow: 1px 1px white;
 
 }
 
@@ -854,21 +868,17 @@ main.about {
     padding: 10px 30px;
     font-size: 25px;
     line-height: 37px;
-    
-    padding: 60px 40px;
-    overflow: hidden;
-    /*background-color: rgba(230, 240, 177, 1);*/
-    /*border: 1px solid green;*/
+    /*text-align:center;*/
 
 }
 
-.about-blurb h1 {
+/*.about-blurb h1 {
     font-size: 40px;
 }
 
 .about-blurb p {
     padding-top: 20px;
-}
+}*/
 
 .about-tape {
     display: flex;
@@ -898,7 +908,7 @@ main.about {
 }
 
 
-span#terms{
+span.terms{
     color:blue;
 }
 
@@ -920,7 +930,6 @@ span#terms{
     border: 3px black;
     height:100%;
 
-    /*background-color:lightyellow;*/
     width:89%;
     display:none;
 }
@@ -971,11 +980,19 @@ span#terms{
 
 }
 
-span#close-modal{
+/*span#close-modal{
     display:flex;
     justify-content: flex-end;
     font-size: 50px;
     /*margin-top:50px;*/
+/*}*/
+
+.fas.fa-window-close{
+    
+    display:flex;
+    justify-content: center;
+    font-size: 50px;
+    color:black;
 }
 
 .legal-modal{

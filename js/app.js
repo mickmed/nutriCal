@@ -1,4 +1,3 @@
-
 // GET PAGE URL END
 let urlSnipper = (path) => {
     page = path.split("/").pop();
@@ -10,17 +9,17 @@ let sitePathPageName = urlSnipper(pathName);
 console.log(sitePathPageName);
 
 // STYLE SELECTED NAV ITEM
-  let navItems = document.getElementsByClassName('navlink');
-    // console.log(navItems[0].getAttribute("href"));
-    for (i = 0; i < navItems.length; i++) {
-        console.log(i);
-        let pageName = urlSnipper(navItems[i].getAttribute("href"));
-        console.log(sitePathPageName, pageName);
-        if (pageName === sitePathPageName) {
-            console.log(navItems[i]);
-            navItems[i].style.fontSize = "24px";
-        }
+let navItems = document.getElementsByClassName('navlink');
+// console.log(navItems[0].getAttribute("href"));
+for (i = 0; i < navItems.length; i++) {
+    // console.log(i);
+    let pageName = urlSnipper(navItems[i].getAttribute("href"));
+    // console.log(sitePathPageName, pageName);
+    if (pageName === sitePathPageName) {
+        console.log(navItems[i]);
+        navItems[i].style.fontSize = "24px";
     }
+}
 
 
 ////////////////APP STARTS HERE//////////////////
@@ -55,7 +54,9 @@ let wholeWheatWraps = new Ingredient('wholeWheatWraps', 'wraps - whole wheat', 5
 var ingredients = [];
 ingredients.push(cheese, cashews, wholeWheatPasta, milkHalfHalf, tempeh, pastaSauce, hummus, wholeWheatWraps);
 
-//MAKE DROPDOWN OF INGREDIENTS
+//MAKE DROPDOWN OF 
+
+
 for (ing in ingredients) {
     // console.log(ingredients[ing].ing_name);
     var option = document.createElement("option");
@@ -113,12 +114,20 @@ var addIngObj = document.getElementById("ings").addEventListener("change", funct
     let id = obj.ingID;
     let amnt = obj.servAmnt;
     let meas = makeMeas();
+    let name = obj.ingName;
 
     $(document).ready(function() {
         //JQuery USED TO ADD AND REMOVE DYNAMIC INGREDIENTS LIST
-        let ingSelectedText = $("#ings option:selected").text();
-        $("#ingredients-list").append(
-            "<li><input type='text' class='ings-list-amnt' data-id='" + id + "' onkeyup='chngAmnt(this)' value =" + amnt + "></select><select class='ings-list-meas' data-id='" + id + "' onchange='chngMeas(this)'>" + meas + "</select><span class='ings-list-ing'>" + ingSelectedText + "</span><a href='javascript:void(0);' class='remove'>&nbsp&times;</a></li>");
+        // let ingSelectedText = $("#ings option:selected").text();
+        // console.log(obj.ingName);
+
+        if (recipe.ingredients.includes(id)) {
+
+        } else {
+            $("#ingredients-list").append(
+                "<li><input type='text' class='ings-list-amnt' data-id='" + id + "' onkeyup='chngAmnt(this)' onclick='chngAmnt(this)' value =" + amnt + "></select><select class='ings-list-meas' data-id='" + id + "' onchange='chngMeas(this)'> onclick='chngMeas(this)'" + meas + "</select><span class='ings-list-ing' data-id='" + id + " 'onclick='getFocus(this)'>" + name + "</span><a href='javascript:void(0);' class='remove'>&nbsp&times;</a></li>");
+            recipe.addIngredient(id);
+        }
 
         //need to use on() here to delete dynamically created <li>
         $(document).on("click", "a.remove", function() {
@@ -133,26 +142,100 @@ var addIngObj = document.getElementById("ings").addEventListener("change", funct
         document.getElementById(objKeys[i]).innerHTML = obj[objKeys[i]];
     }
 
-    recipe.addIngredient(obj);
+    console.log(recipe.ingredients);
 
 });
 
 
+//stored individual ing amounts after changes are made
+// var currentIngAmntsStored = {
+//     ingIds: [],
+//     ingIdsObj: {
+//     ingId:{ingAmnt: '', ingMeas: ''}
+
+//     },
+
+//     addIngredient: function(ingId, ingAmnt, ingMeas) {
+//         this.ingIdsObj.ingId.push({ingId:});
+
+//         this.ingIdsObj.ingId.ingAmnt = ingAmnt;
+//         this.ingIdsObj.ingId.Meas = ingMeas;
+//     },
+//     addVals: function(ingId, ingAmnt, ingMeas){
+//         this.ingIdsObj.ingId.ingAmnt = ingAmnt;
+//         this.ingIdsObj.ingId.Meas = Meas;
+//     }
+// };
+
+
+
+
+
+///swaps out current values in label as changes are made to particlual item in list
 let currentIngVals = {
-    ingName: '',
+    ingId: '',
     ingAmnt: '',
-    ingMeas: ''
+    ingMeas: '',
+    storedObjs: [],
+
+    stored: function() {
+        //store object values for later
+        // console.log(currentIngAmntsStored.ingIds);
+        this.storedObjs.push(this.ingId, this.ingAmnt, this.ingMeas);
+        const checkObjId = (obj) => {
+            obj.ingId === this.ingId
+            console.log(obj.ingId, this.ingId)
+        };
+
+        // function userExists(username) {
+        //     return this.storedObjs.some(function(el) {
+        //         return el.username === username;
+        //     });
+        // }
+
+        // console.log(userExists(this.ingId)); // true
+
+        // currentIngAmntsStored.addIngredient(this.ingId, this.ingAmnt, this.ingMeas);
+        
+
+        console.log(this.storedObjs);
+        // if(currentIngAmntsStored.ingIds.includes(this.ingId)){
+        //     console.log('yes');
+        //     currentIngAmntsStored.addVals(this.ingId, this.ingAmnt, this.ingMeas);
+        // }
+        // else{
+        //     console.log('no');
+        //     console.log('here');
+        //     console.log(this.ingId);
+
+        // }
+        console.log(this.storedObjs.some(checkObjId));
+
+    }
 };
+
+
+
+//when user clicks on ing name get focus in nut facts label
+let getFocus = (elem) => {
+    let objId = eval(elem.dataset.id);
+    let objKeys = Object.keys(eval(elem.dataset.id));
+    let objVals = Object.values(eval(elem.dataset.id));
+    for (i = 0; i < objVals.length; i++) {
+        document.getElementById(objKeys[i]).innerHTML = objVals[i];
+    }
+
+}
 // when click on amnt to change
 let chngAmnt = (amnt) => {
     // set vars
     let objId = eval(amnt.dataset.id);
     let objKeys = Object.keys(eval(amnt.dataset.id));
     let objVals = Object.values(eval(amnt.dataset.id));
-    
+
     // set object with original obj meas if empty
-    if(currentIngVals.ingMeas === ''){
-        currentIngVals.ingMeas = objId.servMeas;//set to original object val
+    if (currentIngVals.ingMeas === '') {
+        currentIngVals.ingMeas = objId.servMeas; //set to original object val
     }
     // calculate new values after input change
     for (i = 0; i < objVals.length; i++) {
@@ -162,10 +245,10 @@ let chngAmnt = (amnt) => {
             //times them by the new amnt val
             var newIngAmnt = lowestCommonByTsp * amnt.value;
             //times them by the amnt meas
-            if(currentIngVals.ingMeas === 'tbs'){
+            if (currentIngVals.ingMeas === 'tbs') {
                 newIngAmnt = newIngAmnt * 3;
             }
-            if(currentIngVals.ingMeas === 'cup'){
+            if (currentIngVals.ingMeas === 'cup') {
                 newIngAmnt = newIngAmnt * 48;
             }
             newIngAmnt = parseFloat(newIngAmnt).toFixed(0);
@@ -178,23 +261,23 @@ let chngAmnt = (amnt) => {
         // console.log(amnt.value);
     }
     // set object with current value
-    currentIngVals.ingName = objId;
+    currentIngVals.ingId = objId.ingID;
     currentIngVals.ingAmnt = amnt.value;
-    recipe.addIngredient(objId, amnt.value, objId.servMeas);
-    // Object.assign(recipe.addIngredient, {ingName: 'Test', ingAmnt: 'Barbar', ingMeas: 'asd'})
-    console.log(recipe.ingredients);
-}
+    currentIngVals.stored();
 
+
+}
+// when click on amnt to change
 let chngMeas = (meas) => {
 
     let objId = eval(meas.dataset.id);
     let objKeys = Object.keys(eval(meas.dataset.id));
     let objVals = Object.values(eval(meas.dataset.id));
     // set object with original obj vals if empty
-    if(currentIngVals.ingAmnt === ''){
+    if (currentIngVals.ingAmnt === '') {
         currentIngVals.ingAmnt = objId.servAmnt;
     }
-    
+
     // calculate new values after meas change
     for (i = 0; i < objVals.length; i++) {
         if (typeof objVals[i] === 'number') {
@@ -202,20 +285,20 @@ let chngMeas = (meas) => {
             var lowestCommonByTsp = (objVals[i] / objId.servAmnt);
             // console.log(lowestCommonByTsp);
             var newIngAmnt = lowestCommonByTsp * currentIngVals.ingAmnt;
-            
-            if(meas.value === 'tbs'){
+
+            if (meas.value === 'tbs') {
                 newIngAmnt = newIngAmnt * 3;
-                
+
             }
-            if(meas.value === 'cup'){
+            if (meas.value === 'cup') {
                 newIngAmnt = newIngAmnt * 48;
-                
+
             }
             newIngAmnt = parseFloat(newIngAmnt).toFixed(0);
         } else {
             var newIngAmnt = objVals[i];
         }
-       
+        // fill the label with new values
         document.getElementById(objKeys[i]).innerHTML = newIngAmnt;
         // console.log(document.getElementById('servAmnt').innerHTML = amnt.value);
         // console.log(amnt.value);
@@ -226,14 +309,103 @@ let chngMeas = (meas) => {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function addRecipe(vals) {
+    let totalAmnts = document.getElementsByClassName('ings-list-amnt');
+    for (i = 0; i < totalAmnts.length; i++) {
+        recipeTotals.addTotals(totalAmnts[i], totalAmnts[i].nextSibling);
+        // console.log(totalAmnts);
+
+    }
+    console.log(recipeTotals.totals);
+
+    // console.log(recipeTotals.totals.reduce((a, b) => +a + +b.allAmnts, 0));
+
+
+}
+
+let recipeTotals = {
+    totals: [],
+    addTotals: function(amnt, meas) {
+        console.log('data', amnt.dataset.id);
+        if (this.totals !== undefined || this.totals.length !== 0) {
+
+            console.log(this.totals);
+            for (tot in this.totals) {
+                console.log(this.totals[tot].dataID);
+                console.log
+            }
+        }
+        var amntsObj = { dataID: amnt.dataset.id, allAmnts: amnt.value, allMeas: meas.value };
+        this.totals.push(amntsObj);
+    },
+    getMeasFromSibling: function() {
+        // document.ge
+    }
+}
+
+
+
 var recipe = {
     ingredients: [],
-    addIngredient: function(ingId, ingAmnt, ingMeas) {
+    addIngredient: function(ingId) {
 
-        var ingsObject = {ingName: ingId, ingAmnt: ingAmnt, ingMeas: ingMeas};
-        this.ingredients.push(ingsObject);
+        var ingsIdObj = ingId;
+        this.ingredients.push(ingsIdObj);
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // let currentObj = (currentIng) => {

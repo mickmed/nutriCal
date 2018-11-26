@@ -11,9 +11,10 @@
 
 <body>
     <nav>
+        <span id="copy">&copy;</span>
         <a href="../index.html" class="logo">NutriCal</a>
         <div class="nav-inner">
-             <a href="app.html" class="navlink">app</a>
+            <a href="app.html" class="navlink">app</a>
             <a href="guide.html" class="navlink">guide</a>
             <a href="horizons.html" class="navlink">horizons</a>
             <a href="testimonials.html" class="navlink">testimonials</a>
@@ -45,8 +46,8 @@
                 </button> -->
                 <ul id="pizza">
                 </ul>
-                <button id="addPizza" type="button">
-                    <i class="fa fa-plus"></i> Add Recipe to Order
+                <button id="add-recipe" onclick="addRecipe(this)" type="button">
+                    <i class="fa fa-btn"></i> Calculate Recipe
                 </button>
                 <ul id="order" class="list-group">
                 </ul>
@@ -141,9 +142,10 @@
         </section>
     </main>
     <footer>
-        <small>Copyright 2018 NutriCal - A division of CalCount Inc., New York.</small>
+        
+        <small>Copyright &copy; 2018 NutriCal - A division of CalCount Inc., New York.</small>
         <small>Website by Michael J. Roth 2018.</small>
-        <small>Legal Disclaimer</small>
+        
         <div class="social-links">
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
